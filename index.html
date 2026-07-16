@@ -1,11 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>For You ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9ecb,#ffd6e8,#fff0f5);
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,.9);
+padding:40px;
+border-radius:25px;
+width:420px;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,.2);
+position:relative;
+z-index:2;
+}
+
+h1{
+color:#ff3d7f;
+font-size:42px;
+text-shadow:0 0 15px pink;
+margin-bottom:15px;
+}
+
+p{
+font-size:20px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+button{
+padding:15px 35px;
+font-size:18px;
+background:#ff4f87;
+color:white;
+border:none;
+border-radius:50px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#secret{
+display:none;
+margin-top:25px;
+font-size:24px;
+color:#d40055;
+font-weight:bold;
+}
+
+.heart{
+position:absolute;
+bottom:-50px;
+font-size:25px;
+animation:float linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
 </head>
-<body style="text-align:center; font-family:Arial; margin-top:100px;">
-    <h1>Dear...</h1>
-    <p>I just wanted to tell you something.</p>
-    <h2>I love you ❤️</h2>
+
+<body>
+
+<div class="card">
+<h1>❤️ Dear ❤️</h1>
+
+<p>
+Every day I think about you.<br>
+You make my world brighter and my heart happier.
+</p>
+
+<button onclick="showLove()">
+Open My Heart 💌
+</button>
+
+<div id="secret">
+I love you more than words can say. ❤️
+</div>
+
+</div>
+
+<script>
+function showLove(){
+document.getElementById("secret").style.display="block";
+}
+
+for(let i=0;i<60;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(15+Math.random()*30)+"px";
+h.style.animationDuration=(5+Math.random()*6)+"s";
+document.body.appendChild(h);
+}
+</script>
+
 </body>
 </html>
